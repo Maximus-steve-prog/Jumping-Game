@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="light"> <!-- Add 'light' class by default -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JQuery Jumper</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Custom Tailwind styles or overrides can go here */
+        .dark #game-container {
+            background-color: #1a202c; /* Dark background for game container */
+        }
+
+        .dark .obstacle {
+            background-color: #48bb78; /* Different obstacle color in dark mode */
+        }
+
+        .dark #score, .dark #high-score {
+            color: #e2e8f0; /* Light text color in dark mode */
+        }
+
+         .dark #start-message {
+            color: #a0aec0; /* Lighter text color for message in dark mode */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Keep your custom CSS for specific elements -->
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 p-2 flex items-center justify-center min-h-screen ">
+    <div class="flex relative flex-col items-center w-full ">
+
+        <video src="/WhatsApp Video 2025-05-10 at 20.51.45_ac646bc9.mp4" autoplay loop muted class="absolute top-0 left-0 w-full  h-[600px] object-cover"></video>
+
+        <div id="game-container" class="relative w-full h-[600px] border border-gray-400 overflow-hidden ">
+            <svg id="player" width="30" height="30" viewBox="0 0 30 30">
+                <circle cx="15" cy="15" r="15" fill="blue"/>
+            </svg>
+            <div id="obstacles-container" class="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <!-- Obstacles will be added here by JavaScript -->
+            </div>
+            <div id="score" class="absolute top-2 right-2 text-lg font-sans text-gray-800 dark:text-gray-200">Score: 0</div>
+            <div id="high-score" class="absolute top-8 right-2 text-lg font-sans text-gray-800 dark:text-gray-200">High Score: 0</div>
+            <div id="start-message" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-gray-600 dark:text-gray-400 hidden">Press Start to Play</div>
+        </div>
+
+        <div class="mt-2 flex space-x-4">
+            <button id="jump-button" class="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Jump</button>
+            <button id="start-stop-button" class="px-4 py-1 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Start</button>
+            <!-- <button id="dark-mode-toggle" class="px-4 py-1 bg-gray-700 text-white rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50">Toggle Dark Mode</button> -->
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
